@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""把扁平 zip 整合包 转换成 无名杀「获取扩展」在线源（Gitee 可托管布局）。
+"""把扁平 zip 整合包 转换成 无名杀「获取扩展」在线源（GitHub + jsDelivr 可托管布局）。
 
-产物（本脚本输出到 在线发布/ 目录，即 Gitee 仓库根内容）：
+产物（本脚本输出到 在线发布/ 目录，即 GitHub 仓库根内容）：
     在线发布/
       catalog.js              ← 清单（游戏读它决定显示/更新什么）
       我的英雄杀/             ← 扩展名（= info.json 的 name，必须一致）
@@ -34,10 +34,10 @@ OUT_DIR = os.path.dirname(os.path.abspath(__file__))                # 在线发�
 
 DEFAULT_ZIP = os.path.join(RELEASE, "我的英雄杀_v4.1.1.zip")
 
-# Gitee 仓库信息（仅用于 README 提示，不影响产物）。改仓库后同步改这里。
-GITEE_USER = "你的Gitee用户名"
-GITEE_REPO = "wuming-sha-ext"
-GITEE_BRANCH = "master"   # Gitee 默认分支通常是 master；请按实际仓库确认
+# GitHub 仓库信息（仅用于打印提示，不影响产物）。改仓库后同步改这里。
+GH_USER = "你的GitHub用户名"
+GH_REPO = "wuming-sha-ext"
+GH_BRANCH = "main"   # GitHub 新建仓库默认分支是 main；请按实际仓库确认
 
 
 def gather_files(z):
@@ -155,8 +155,8 @@ def main():
     img_count = len([f for f in files if f.startswith("image/")])
     print("  ", os.path.join(OUT_DIR, ext_name, "image/character/ ... (%d 张)" % img_count))
     print("---- 下一步 ----")
-    print("  1) 把 在线发布/ 下全部内容（catalog.js + %s/）推到 Gitee 仓库根" % ext_name)
-    print("  2) 获取扩展地址填： https://gitee.com/%s/%s/raw/%s/" % (GITEE_USER, GITEE_REPO, GITEE_BRANCH))
+    print("  1) 把 在线发布/ 下全部内容（catalog.js + %s/）推到 GitHub 仓库根（public）" % ext_name)
+    print("  2) 获取扩展地址填： https://cdn.jsdelivr.net/gh/%s/%s@%s/" % (GH_USER, GH_REPO, GH_BRANCH))
     print("  3) 朋友：设置→通用→获取扩展地址→添加→粘贴上面地址→获取扩展→下载/更新")
 
 

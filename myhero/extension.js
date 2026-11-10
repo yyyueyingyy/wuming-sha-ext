@@ -2797,7 +2797,7 @@ function index_default10() {
 }
 
 // ../_workbuddy_tmp/v41_build/merge_entry.js
-var PACK_NAME = "\u6211\u7684\u82F1\u96C4\u6740";
+var PACK_NAME = "myhero";
 var mods = [index_default, index_default2, index_default3, index_default4, index_default5, index_default6, index_default7, index_default8, index_default9, index_default10];
 function normalizeImg(img) {
   if (!img || !/image\/character\//.test(img)) return img;

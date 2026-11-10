@@ -1,7 +1,7 @@
 // 无名杀「获取扩展」清单 —— 由 publish.py 自动生成，请勿手改
 // 游戏请求 <获取扩展地址>catalog.js 后执行本文件填充 window.extension
 window.extension = {
-  "我的英雄杀": {
+  "myhero": {
     author: "你的名字",
     size: "778 KB",
     date: "2026-11-10",
